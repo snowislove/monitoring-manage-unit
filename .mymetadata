@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="monitoring-manage-unit"
+  id="myeclipse.1379045175710"
+  context-root="/mmu"
+  j2ee-spec="5.0"
+  archive="monitoring-manage-unit.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+

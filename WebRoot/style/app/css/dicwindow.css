@@ -1,0 +1,56 @@
+html{overflow:hidden;}
+.div{left:50%;top:50%;position:absolute;margin-left:-190px;margin-top:-130px;}
+.top{
+	background:url(../images/dicwindow/top.png);
+	height:19px;
+	width:375px;
+	margin-top:18px;
+	}
+.mid{
+	background:url(../images/dicwindow/mid.png);
+	width:375px;
+	height:216px;
+	}
+.icon{
+	
+	height:76px;
+	width:380px;
+	margin:10px 0 0 20px;
+	}
+.icon span{
+	font-size:14px;
+	color:#ff9600;
+	font-weight:bold;
+	padding:0px 0 0 90px;
+	line-height:66px;
+	}
+
+.bom{
+	background:url(../images/dicwindow/bom.png) no-repeat;
+	height:19px;
+	width:375px;
+	}
+
+.title{
+	font-size:12px;
+	padding:2px 0 0 30px;
+	*padding:5px 0 5px 30px !important;
+	*padding:2px 0 0 30px;
+	height:26px;
+	line-height:26px;
+	}
+
+.content2{
+	font-size:12px;
+	padding:6px 26px 6px 40px;
+	*padding:12px 26px 12px 40px !important;
+	*padding:6px 26px 6px 40px;
+	text-indent:24px;
+	line-height:18px;
+	}
+.buttonbar{
+	text-align:center;
+	padding-top:6px;
+	*padding:6px !important;
+	*padding:0px;
+	}

@@ -1,0 +1,81 @@
+@charset "utf-8";
+/* CSS Document */
+.menu ul li a.hide, .menu ul li a:visited.hide {
+   display:none;
+   color:#15428B;
+   
+}
+.menu ul li a:hover ul li a.hide {
+   display:none;
+   color:#15428B;
+}
+/*必须保留，请勿删除---background:#fff;*/
+.menu_onfocus{
+	font-size:12px;
+	color:#15428B;
+	background:url(../images/menu_bg_onfocus1.png) no-repeat top;
+	cursor:pointer;
+	border-top:1px #6BA4EF solid;
+	height:20px;
+	line-height:20px;
+	margin-top:3px;
+
+}
+.menu_onblur{
+	font-size:12px;
+	color:#15428B;
+    cursor:pointer;
+	}
+.menu ul li a:hover {
+     font-size:12px;
+	color:#15428B;
+	cursor:pointer;
+
+
+}
+.menu ul li a:hover ul {
+   display:block; 
+   position:absolute; 
+   top:24px; 
+   left:0; 
+   width:150px;/*修改宽度值150px*/
+   border:1px solid #6BA4EF;
+   background:#fff;
+   line-height:25px;
+   height:25px;
+}
+.menu ul li a:hover ul li a.sub {
+   background:#6D97D3; 
+   color:#15428B;
+}
+.menu ul li a:hover ul li a {
+   display:block; 
+   color:#15428B;
+   height:25px;
+   line-height:25px;
+   padding-top:1px;
+   padding-bottom:1px;
+   text-align:left; 
+   background:url(../images/drop_bg1.png) repeat-y left;/*center  改为left */
+   width:150px;/*增加宽度值150px*/
+   
+}
+.menu ul li a:hover ul li a ul {
+   visibility:hidden;
+}
+.menu ul li a:hover ul li a:hover {
+   background:url(../images/drop_bg2.png) no-repeat center; 
+   color:#15428B;
+   line-height:25px;
+   height:25px;
+}
+.menu ul li a:hover ul li a:hover ul {
+   visibility:visible; 
+   position:absolute; 
+   left:102px; 
+   top:0; 
+   color:#15428B;
+}
+.menu ul li a:hover ul li a:hover ul.left {
+   left:-104px;
+}

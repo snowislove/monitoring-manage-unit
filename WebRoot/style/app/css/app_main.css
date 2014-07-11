@@ -1,0 +1,207 @@
+.data_objshow {
+	padding-left: 5PX;
+	cursor: pointer;
+}
+
+.input_redstar {
+	color: #FF0000;
+}
+
+.input_onlyread {
+	color: #666;
+}
+
+.relation_guide_wait {
+	color: #999999
+}
+
+.button_bar {
+	border-bottom: 1px #cecece solid;
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.button_bar td {
+	padding: 0px;
+}
+
+.button_bar_bg {
+	background: url(../images/page_bg.png);
+	height: 23px;
+	padding-top: 3px;
+}
+
+.page_bar {
+	border-bottom: 1px #cecece solid;
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.page_bar td {
+	padding: 0px;
+}
+
+.page_bar_bg {
+	text-align: left;
+	background: url(../images/menuS.png);
+	height: 32px;
+}
+
+.edit_tab_div {
+	height: 25px;
+	width: 99%;
+	text-align: left;
+	margin-left: 5px;
+}
+
+.edit_tab_div_text {
+	background: url(../images/edit_tab.png);
+	line-height: 23px;
+	width: 77px;
+	margin-top: 3px;
+	text-align: left;
+	font-weight: bold;
+}
+
+.contrast_table {
+	border: 1px #f0f0f0 solid;
+	font-size: 12px;
+	width: 99%;
+	border-collapse: collpase;
+}
+
+.contrast_table td {
+	padding: 0px;
+}
+
+.treein {
+	overflow: auto;
+	padding-top: 5px;
+	padding-left: 5px;
+}
+
+/****2009年5月7日13:33:25申请单*****/
+.noboder {
+	border: solid 1px #CCCCCC;
+	border: 0;
+	width: 98%;
+	border-collapse: collapse;
+}
+
+.noboder tr {
+	background: #fff;
+}
+
+.noboder td {
+	border-collapse: collapse; /*设置表格左右内边距为5px,以确保表格内容与边线之间的距离*/
+	height: 20px;
+	padding-left: 3px;
+	padding-right: 3px;
+	word-break: break-all;
+	background-color: #f8f8f8;
+	font-family: "宋体", "幼圆";
+}
+
+.noboder th {
+	background: url(../images/thbg.png) repeat-x top;
+	height: 20px;
+	font-weight: normal;
+	border: solid 1px #CCCCCC;
+	border-collapse: collapse;
+	color: #15428b;
+	text-align: left;
+	padding-left: 3px;
+	line-height: 20px;
+}
+
+.noboder th a {
+	color: #103667;
+	text-decoration: none;
+}
+
+.noboder td a {
+	color: #184785;
+	text-decoration: none;
+}
+
+.noboder td  . list {
+	background-color: #e0e9f9;
+}
+
+.noboder td.right { /*用于表格中居右显示的数据*/
+	text-align: right;
+}
+
+.table_all {
+	border: 1px solid #75A2DB;
+	width: 100%; /*表格外部蓝色边框，无上边框*/
+	border-top: NONE;
+}
+
+.content_title2 {
+	color: #6A0000;
+	font-size: 12px;
+	padding-left: 20px;
+	padding-right: 10px;
+	text-align: left;
+	line-height: 20px;
+	background-color: #F2F2F2;
+	text-decoration: none;
+}
+
+.content_back1 {
+	background-color: #ffffff;
+	color: #333333;
+	line-height: 20px;
+	text-align: left;
+	font-family: '宋体';
+	word-break: break-all;
+}
+
+.toolbar {
+	background: url(../images/thbg.png) repeat-x top;
+	color: #fff;
+	padding-left: 3px;
+	line-height: 20px;
+	text-align: left;
+	font-size: 12px;
+	text-decoration: none;
+}
+
+.lefttext {
+	color: #2E568A;
+	text-align: right;
+	font-weight: bold;
+}
+
+.righttext {
+	color: #333333;
+	text-align: left;
+}
+
+.relation_guide_wait {
+	color: #999999
+}
+
+.inputStyle {
+	border: 1px #cccccc solid;
+}
+
+.divStyle {
+	font-size: 13px;
+	height: 19px;
+	line-height: 19px;
+	cursor: pointer;
+	background: #f8f8f8;
+}
+
+.closeButton {
+	border-top: 1px #666666 solid;
+	font-size: 13px;
+	font-weight: bold;
+	cursor: pointer;
+	background: #f7f7f7;
+	height: 26px;
+	line-height: 26px;
+	padding-top: 1px;
+}

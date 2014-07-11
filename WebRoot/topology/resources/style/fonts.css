@@ -1,0 +1,57 @@
+/* CSS file */
+@font-face {
+	src: local("dialog");
+	font-family: "Dialog";
+	font-weight: normal;
+	font-style: normal;
+	embedAsCFF: false;
+}
+@font-face {
+	src: local("dialog");
+	font-family: "Dialog";
+	font-weight: bold;
+	font-style: normal;
+	embedAsCFF: false;
+}
+@font-face {
+	src: local("dialog");
+	font-family: "Dialog";
+	font-weight: normal;
+	font-style: italic;
+	embedAsCFF: false;
+}
+@font-face {
+	src: local("dialog");
+	font-family: "Dialog";
+	font-weight: bold;
+	font-style: italic;
+	embedAsCFF: false;
+}
+@font-face {
+	src: local("serif");
+	font-family: "_serif";
+	font-weight: normal;
+	font-style: normal;
+	embedAsCFF: false;
+}
+@font-face {
+	src: local("serif");
+	font-family: "_serif";
+	font-weight: bold;
+	font-style: normal;
+	embedAsCFF: false;
+}
+@font-face {
+	src: local("serif");
+	font-family: "_serif";
+	font-weight: normal;
+	font-style: italic;
+	embedAsCFF: false;
+}
+@font-face {
+	src: local("serif");
+	font-family: "_serif";
+	font-weight: bold;
+	font-style: italic;
+	embedAsCFF: false;
+}

@@ -1,0 +1,7 @@
+
+@namespace s "library://ns.adobe.com/flex/spark";
+s|Panel
+{
+	skinClass: ClassReference("spark.skins.spark.PanelSkin");
+}
+	

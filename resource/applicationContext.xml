@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	   xmlns:jee="http://www.springframework.org/schema/jee"
+	   xmlns:aop="http://www.springframework.org/schema/aop"
+	   xmlns:util="http://www.springframework.org/schema/util"
+	   xmlns:p="http://www.springframework.org/schema/p"
+	   xmlns:tx="http://www.springframework.org/schema/tx" 
+	   xmlns:tool="http://www.springframework.org/schema/tool" 
+	   xmlns:context="http://www.springframework.org/schema/context" 
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans 
+			http://www.springframework.org/schema/beans/spring-beans.xsd
+			http://www.springframework.org/schema/tx
+			http://www.springframework.org/schema/tx/spring-tx.xsd
+			http://www.springframework.org/schema/aop
+			http://www.springframework.org/schema/aop/spring-aop.xsd
+			http://www.springframework.org/schema/context
+			http://www.springframework.org/schema/context/spring-context.xsd
+           http://www.springframework.org/schema/jee
+           http://www.springframework.org/schema/jee/spring-jee.xsd
+           http://www.springframework.org/schema/util
+           http://www.springframework.org/schema/util/spring-util.xsd
+           http://www.springframework.org/schema/tool
+           http://www.springframework.org/schema/tool/spring-tool.xsd"          
+           default-lazy-init="true" default-autowire="byName">
+	<!-- 添加对Annotation的支持 -->
+	<context:annotation-config />
+	
+	<!-- 扫描该包下的所有Bean(@Component) -->
+	<context:component-scan base-package="com.secpro.platform.monitoring.manage" />
+	
+	<!-- 读取数据库配置信息 -->
+	<bean
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+			<value>classpath*:config/jdbc.properties</value>
+		</property>
+	</bean>
+	<!-- 配置dataSource -->
+	<bean id="dataSource" destroy-method="close"
+		class="com.mchange.v2.c3p0.ComboPooledDataSource">
+		<property name="driverClass" value="${jdbc.driverClassName}" />
+		<property name="jdbcUrl" value="${jdbc.url}" />
+		<property name="user" value="${jdbc.username}" />
+		<property name="password" value="${jdbc.password}" />
+		<!--初始化时获取的连接数，取值应在minPoolSize与maxPoolSize之间。Default: 3 --> 
+
+	    <property name="initialPoolSize" value="1" /> 
+	
+	    <!--连接池中保留的最小连接数。--> 
+	
+	    <property name="minPoolSize" value="1" /> 
+	
+	    <!--连接池中保留的最大连接数。Default: 15 --> 
+	
+	    <property name="maxPoolSize" value="300" /> 
+	
+	    <!--最大空闲时间,60秒内未使用则连接被丢弃。若为0则永不丢弃。Default: 0 --> 
+	
+	    <property name="maxIdleTime" value="60" /> 
+	
+	    <!--当连接池中的连接耗尽的时候c3p0一次同时获取的连接数。Default: 3 --> 
+	
+	    <property name="acquireIncrement" value="5" /> 
+	
+	    <!--每60秒检查所有连接池中的空闲连接。Default: 0 --> 
+	
+	    <property name="idleConnectionTestPeriod" value="60" /> 
+	</bean>
+	
+	<!-- 配置SessionFactory，据说这个packagesToScan不能扫描子包-->
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="packagesToScan">
+			<list>
+				<value>com.secpro.platform.monitoring.manage.entity</value>
+			</list>
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.OracleDialect</prop>
+				<prop key="hibernate.current_session_context_class">org.springframework.orm.hibernate4.SpringSessionContext</prop>
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.format_sql">true</prop>
+				<prop key="hibernate.hbm2ddl.auto">false</prop>
+				
+			</props>
+		</property>
+	</bean>
+	
+	<!-- transactionManager -->
+	<bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+        <property name="sessionFactory">
+           <ref local="sessionFactory"/>
+        </property>
+    </bean>
+	<!--采用注解来管理Bean	-->
+	<tx:annotation-driven transaction-manager="transactionManager" />
+	
+	<!--<bean id="transactionInterceptor" class="org.springframework.transaction.interceptor.TransactionInterceptor">
+        <property name="transactionManager">
+           <ref local="transactionManager"/>
+        </property>
+        <property name="transactionAttributes">
+           <props>
+              <prop key="register">PROPAGATION_REQUIRED</prop>
+              
+              hibernate4必须配置为开启事务 否则 getCurrentSession()获取不到 
+              <prop key="get*">PROPAGATION_REQUIRED,readOnly</prop>
+              <prop key="find*">PROPAGATION_REQUIRED,readOnly</prop>
+              <prop key="select*">PROPAGATION_REQUIRED,readOnly</prop>
+              <prop key="query*">PROPAGATION_REQUIRED,readOnly</prop> 
+              
+              <prop key="sync*">PROPAGATION_REQUIRED</prop>
+              <prop key="finish*">PROPAGATION_REQUIRED</prop>
+              <prop key="add*">PROPAGATION_REQUIRED</prop>
+              <prop key="insert*">PROPAGATION_REQUIRED</prop>
+              <prop key="edit*">PROPAGATION_REQUIRED</prop>
+              <prop key="update*">PROPAGATION_REQUIRED</prop>
+              <prop key="save*">PROPAGATION_REQUIRED</prop>
+              <prop key="remove*">PROPAGATION_REQUIRED</prop>
+              <prop key="delete*">PROPAGATION_REQUIRED</prop>
+              <prop key="*">PROPAGATION_REQUIRED,-java.lang.Exception</prop>    
+           </props>
+        </property>
+    </bean>
+	-->
+</beans>

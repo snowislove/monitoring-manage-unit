@@ -1,0 +1,91 @@
+
+@namespace components "demo.components.*";
+@namespace s "library://ns.adobe.com/flex/spark";
+@namespace components1 "commons.components.*";
+
+components1|IconButton
+{
+	skin-class: ClassReference("demo.components.IconButtonSkin");
+	chromeColor: #e1ecf9;
+	cornerRadius: 0;
+}
+components1|IconToggleButton
+{
+	skin-class: ClassReference("demo.components.IconToggleButtonSkin");
+	chromeColor: #e1ecf9;
+	cornerRadius: 0;
+}
+
+components1|ControlBar 
+{
+	skin-class: ClassReference("demo.components.ControlBarSkin");
+}
+
+s|Application{
+    fontFamily: Verdana;
+	backgroundColor: #eaf1f7;
+}
+
+s|Button {
+	chromeColor: #e1ecf9;
+	cornerRadius: 0;
+}
+
+s|TabBar {
+	cornerRadius: 0;
+	chromeColor: #e1ecf9;
+}
+
+.titledBorderBox {
+	border-style: solid;
+	border-alpha: 1.0;
+	corner-radius: 5;
+}
+
+.titledContentBox {
+	padding-top: 15;
+	padding-left: 5;
+	padding-right: 5;
+	padding-bottom: 5;
+}
+
+.borderLabel {
+	background-color: #FFFFFF;
+	background-alpha: 1.0;
+	padding-left: 5;
+	padding-right: 5;
+	padding-bottom: 2;
+	padding-top: 2;
+}
+s|RichEditableText {
+	background-color: #f6fcff;
+	background-alpha: 1.0;
+	padding-bottom: 5;
+	padding-top: 5; 
+	padding-left: 5; 
+	padding-right: 5;
+}
+s|RichText {
+	background-color: #f6fcff;
+	background-alpha: 1.0;
+	padding-bottom: 5;
+	padding-top: 5; 
+	padding-left: 5; 
+	padding-right: 5;
+}
+
+.mainPanel {
+	background-color: #eaf1f7;
+}
+.optionPanel {
+	background-color: #FFFFFF;
+}
+
+.descriptionText {
+	background-color: #f6fcff;
+	background-alpha: 1.0;
+	padding-bottom: 5;
+	padding-top: 5; 
+	padding-left: 5; 
+	padding-right: 5;
+}

@@ -1,0 +1,119 @@
+.chromestyle{
+    position:relative; 
+	font-family:'宋体';
+	font-size:12px; 
+	z-index:100;
+	padding-top:0px;
+	padding-left:15px;
+	width:auto;
+	background: url(../images/menu_bg.png) repeat-x;
+	height:28px;
+	line-height:28px;
+	color:#ffffff;
+	overflow:hidden;
+}
+
+/**.chromestyle:after{ /*Add margin between menu and rest of content in Firefox
+	content: "."; 
+	display: block; 
+	height: 0; 
+	clear: both; 
+	visibility: hidden;
+}***/
+
+.chromestyle ul{
+    padding:0; 
+	margin:0; 
+	list-style: none; /*set value to "left", "center", or "right"*/
+}
+
+.chromestyle ul li{
+	float:left; 
+	position:relative;
+}
+
+.chromestyle ul li a, .chromestyle ul li a:visited {
+	display:block; 
+	text-decoration:none; 
+	text-align:center; 
+	overflow:hidden;
+	width:104px;
+	color:#ffffff;
+}
+/*
+.chromestyle ul li a:hover{
+background: url(http://www.jsweb8.cn/jsweb8/images/chromebg-over.gif) center center repeat-x; THEME CHANGE HERE
+}*/
+
+/*.chromestyle ul li a[rel]:after{ HTML to indicate drop down link
+content: " v";*/
+/*content: " " url(downimage.gif); /*uncomment this line to use an image instead
+}*/
+
+.menu_onfocus{
+	font-size:12px;
+	color:#fff;
+	line-height:24px;
+	height:24px;
+	padding:3px 7px;
+	background:url(../images/menu_bg_onfocus.png) repeat-x center;
+	cursor:pointer;
+	border:1px #70ceac solid;
+}
+.menu_onblur{
+	font-size:12px;
+	color:#fff;
+	padding-left:8px;
+	padding-right:8px;
+    cursor:pointer;
+	line-height:24px;
+	height:24px;
+}
+/* ######### Style for Drop Down Menu ######### */
+
+.dropmenudiv{
+	display:block; 
+    position:absolute; 
+    width:150px;
+    border:1px solid #4378BF;/*THEME CHANGE HERE*/
+    background:#fff;
+	z-index:100;
+	visibility: hidden; /*Add Shadow in IE. Remove if desired*/
+}
+.dropmenudiv ul{
+ display:block; 
+	text-decoration:none; 
+	text-align:center; 
+	overflow:hidden;
+	width:150px;
+	color:#184278;
+	margin:0px;
+	padding:0px;
+}
+
+.dropmenudiv a{
+	display:block; 
+    background:#c5d6ec; 
+    color:#15428B;
+    height:25px;
+    line-height:25px;
+    padding-top:1px;
+    padding-bottom:1px;
+    background:url(../images/drop_bg1.png) repeat-y left;
+    text-align:left;
+}
+
+* html .dropmenudiv a{ /*IE only hack*/
+width: 100%;
+}
+
+.dropmenudiv a:hover{ /*THEME CHANGE HERE*/
+	background:url(../images/drop_bg2.png) no-repeat center; 
+   color:#15428B;
+}
+.menu_ico{
+   padding-left:6px;
+  }
+.menu_font{
+   padding-left:10px;
+  }

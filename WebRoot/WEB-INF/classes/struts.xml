@@ -1,0 +1,532 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC  
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"  
+    "http://struts.apache.org/dtds/struts-2.3.dtd"> 
+<struts>
+	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
+	<constant name="struts.devMode" value="false" />
+<constant name="struts.convention.exclude.parentClassLoader" value="false" />
+
+    <package name="default" extends="struts-default,json-default,jfreechart-default,spring-default">
+		
+		<!-- 
+		<interceptors>
+		   <interceptor name="logCheck"
+		    	class="com.secpro.platform.monitoring.manage.interceptor.LogInterceptor" />
+		   <interceptor-stack name="mystack">
+		    <interceptor-ref name="logCheck" />
+		    <interceptor-ref name="defaultStack" />
+		   </interceptor-stack>
+		  </interceptors>
+		 
+		  
+		 <default-interceptor-ref name="mystack"></default-interceptor-ref>
+		 -->
+        <default-action-ref name="index" />
+		<global-results>
+			<result name="error">/error.jsp</result>
+		</global-results>
+
+		<global-exception-mappings>
+			<exception-mapping exception="java.lang.Exception" result="error" />
+		</global-exception-mappings>
+		<!-- 资源类 -->
+		<action name="ResObjectDelete" class="ResObjectAction" method="removeResObj">
+			<result name="success" type="redirect">/tree/treeViewFrame.jsp</result>
+		</action>
+		<action name="findAllCompany" class="SysDevAction" method="getAllCompany">
+		</action>
+		<action name="findDevTypeByCompanyCode" class="SysDevAction" method="getDevTypeByCompanyCode">
+		</action>
+		<action name="toAddSysObj" class="ResObjectAction" method="toAddResObj">
+			<result name="toAddSysObj">/resobj/addResObj.jsp</result>
+			<result name="failed">/error.jsp</result>
+		</action>
+		<action name="saveSysObj" class="ResObjectAction" method="saveResObj">
+			<result name="success">/error.jsp</result>
+			<result name="failed">/error.jsp</result>
+		</action>
+		<action name="toViewSysObj" class="ResObjectAction" method="getResObjInof">
+			<result name="failed">/error.jsp</result>
+			<result name="success">/resobj/viewResObj.jsp</result>
+		</action>
+		<action name="modifySysObj" class="ResObjectAction" method="modifyResObj">
+			<result name="failed">/error.jsp</result>
+			<result name="success">/resobj/viewResObj.jsp</result>
+		</action>
+		<!-- 设备厂商 -->
+		<action name="toViewAllCompany" class="SysDevAction" method="toViewAllCompany">
+		</action>
+		<action name="saveCompany" class="SysDevAction" method="saveCompany">
+			<result name="failed">/error.jsp</result>
+			<result name="success">/devcompany/viewAllDevCompany.jsp</result>
+		</action>
+		<action name="deleteCompany" class="SysDevAction" method="deleteCompany">
+			<result name="success">/devcompany/viewAllDevCompany.jsp</result>
+			<result name="failed">/error.jsp</result>
+		</action>
+		<action name="getCompanyById" class="SysDevAction" method="getCompanyById">
+			<result name="failed">/error.jsp</result>
+			<result name="success">/devcompany/modifyCompany.jsp</result>
+		</action>
+		<action name="modifyCompany" class="SysDevAction" method="modifyCompany">
+			<result name="failed">/error.jsp</result>
+			<result name="success">/devcompany/viewAllDevCompany.jsp</result>
+		</action>
+		<action name="toAddType" class="SysDevAction" method="toAddType">
+			<result name="failed">/error.jsp</result>
+			<result name="success">/devcompany/addType.jsp</result>
+		</action>
+		<action name="saveDevType" class="SysDevAction" method="saveDevType">
+			<result name="failed">/error.jsp</result>
+			<result name="success">/devcompany/viewAllDevCompany.jsp</result>
+		</action>
+		<action name="viewDevTypeByCompanyCode" class="SysDevAction" method="viewDevTypeByCompanyCode">
+		</action>
+		<action name="deleteDevType" class="SysDevAction" method="deleteDevType">
+			<result name="failed">/error.jsp</result>
+			<result name="success">/devcompany/viewAllDevCompany.jsp</result>
+		</action>
+		<action name="toModifyType" class="SysDevAction" method="toModifyType">
+			<result name="failed">/error.jsp</result>
+			<result name="success">/devcompany/modifyType.jsp</result>
+		</action>
+		<action name="modifyType" class="SysDevAction" method="modifyType">
+			<result name="failed">/error.jsp</result>
+			<result name="success">/devcompany/viewAllDevCompany.jsp</result>
+		</action>
+		<action name="toAddCommand" class="SysDevAction" method="toAddCommand">
+			<result name="failed">/error.jsp</result>
+			<result name="success">/devcompany/addCommand.jsp</result>
+		</action>
+		<action name="saveCommand" class="SysDevAction" method="saveCommand">
+			<result name="failed">/error.jsp</result>
+			<result name="success">/devcompany/viewAllDevCompany.jsp</result>
+		</action>
+		<action name="modifyCommand" class="SysDevAction" method="modifyCommand">
+			<result name="failed">/error.jsp</result>
+			<result name="success">/devcompany/viewAllDevCompany.jsp</result>
+		</action>
+		<action name="toViewCommand" class="SysDevAction" method="toViewCommand">
+			<result name="failed">/error.jsp</result>
+			<result name="success">/devcompany/viewCommand.jsp</result>
+		</action>
+		<action name="getAllType" class="SysDevAction" method="getAllType">
+		</action>
+		<!-- 采集端 -->
+		<action name="viewAllMca" class="ResObjectAction" method="viewAllMca">
+			<result name="failed">/error.jsp</result>
+			<result name="success">/resobj/viewMca.jsp</result>
+		</action>
+		<action name="saveMca" class="ResObjectAction" method="saveMca">
+			<result name="failed">/error.jsp</result>
+			<result name="success">/resobj/viewMca.jsp</result>
+		</action>
+
+		<action name="updateMcaPaused" class="ResObjectAction" method="updateMcaPaused">
+			<result name="failed">/error.jsp</result>
+			<result name="success">/resobj/viewMca.jsp</result>
+		</action>
+		<action name="deleteMca" class="ResObjectAction" method="deleteMca">
+			<result name="failed">/error.jsp</result>
+			<result name="success">/resobj/viewMca.jsp</result>
+		</action>
+		<action name="toModifyMca" class="ResObjectAction" method="toModifyMca">
+			<result name="failed">/error.jsp</result>
+			<result name="success">/resobj/modifyMca.jsp</result>
+		</action>
+		<action name="modifyMca" class="ResObjectAction" method="modifyMca">
+			<result name="failed">/error.jsp</result>
+			<result name="success">/resobj/viewMca.jsp</result>
+		</action>
+		<action name="getResObjByCity" class="ResObjectAction" method="getResObjByCity">
+		</action>
+		<action name="getMcaByCity" class="ResObjectAction" method="getMcaByCity">
+		</action>
+		<action name="getConfigVersion" class="ResObjectAction" method="getConfigVersion">
+		</action>
+		<action name="configMatch" class="ResObjectAction" method="configMatch">
+		</action>
+		<!-- 城市架构 -->
+		<action name="getAllCity" class="CityTreeAction" method="getAllCity">
+		</action>
+		<action name="getCityByParent" class="CityTreeAction" method="getCityByParent">
+		</action>
+		<!-- 指标类 -->
+		<action name="toViewMcaRaw" class="SysKpiInfoAction" method="toViewMcaRaw">
+			<result name="failed">/error.jsp</result>
+			<result name="success">/resobj/mcaKpiValue.jsp</result>
+		</action>
+		<action name="queryMcaRaw" class="SysKpiInfoAction" method="queryMcaRaw">
+		</action>
+		<action name="viewKpiInfo" class="SysKpiInfoAction" method="viewKpiInfo">
+		</action>
+		<action name="deleteKpi" class="SysKpiInfoAction" method="deleteKpi">
+			<result name="failed">/error.jsp</result>
+			<result name="success">/resobj/viewKpiInfo.jsp</result>
+		</action>
+		<action name="modifyKpiInfo" class="SysKpiInfoAction" method="modifyKpiInfo">
+			<result name="failed">/error.jsp</result>
+			<result name="success">/resobj/viewKpiInfo.jsp</result>
+		</action>
+		<action name="toModifyKpi" class="SysKpiInfoAction" method="toModifyKpi">
+			<result name="failed">/error.jsp</result>
+			<result name="success">/resobj/modifyKpi.jsp</result>
+		</action>
+		<action name="saveKpiInfo" class="SysKpiInfoAction" method="saveKpiInfo">
+			<result name="failed">/error.jsp</result>
+			<result name="success">/resobj/viewKpiInfo.jsp</result>
+		</action>
+		<action name="findAllResClass" class="SysKpiInfoAction" method="findAllResClass">
+		</action>
+		<action name="toAddMidOid" class="SysKpiOidAction" method="toAddMidOid">
+			<result name="failed">/error.jsp</result>
+			<result name="success">/resobj/addMibRule.jsp</result>
+		</action>
+		<action name="addOrUpdateMibOid" class="SysKpiOidAction" method="addOrUpdateMibOid">
+			<result name="failed">/error.jsp</result>
+			<result name="success">/resobj/viewKpiInfo.jsp</result>
+		</action>
+		<action name="queryMIb" class="SysKpiOidAction" method="queryMIb">
+		</action>
+		<!-- watchdog任务 -->
+		<action name="mcaOperation" class="SysKpiInfoAction" method="mcaOperation">
+			<result name="failed">/error.jsp</result>
+			<result name="success">/resobj/viewMca.jsp</result>
+		</action>
+		<!-- 基线模板类 -->
+		<action name="getAllBaseLinetemplate" class="BaseLineTemplateAction" method="getAllBaseLinetemplate">
+		</action>
+		<action name="saveBaseLineTemplate" class="BaseLineTemplateAction" method="saveBaseLineTemplate">
+			<result name="failed">/error.jsp</result>
+			<result name="success">/baseline/viewBaseLineTemplate.jsp</result>
+		</action>
+		<action name="getAllBaseline" class="BaseLineTemplateAction" method="getAllBaseline">
+		</action>
+		<action name="deleteTemplate" class="BaseLineTemplateAction" method="deleteTemplate">
+			<result name="failed">/error.jsp</result>
+			<result name="success">/baseline/viewBaseLineTemplate.jsp</result>
+		</action>
+		<action name="toModifyTemplate" class="BaseLineTemplateAction" method="toModifyTemplate">
+			<result name="failed">/error.jsp</result>
+			<result name="success">/baseline/modifyBaseLineTemplate.jsp</result>
+		</action>
+		<action name="modifyBaseLineTemplate" class="BaseLineTemplateAction" method="modifyBaseLineTemplate">
+			<result name="failed">/error.jsp</result>
+			<result name="success">/baseline/viewBaseLineTemplate.jsp</result>
+		</action>
+		<action name="getBaseLineTemplateByCompany" class="BaseLineTemplateAction" method="getBaseLineTemplateByCompany">
+		</action>
+		<action name="templateResMapping" class="BaseLineTemplateAction" method="templateResMapping">
+			<result name="failed">/error.jsp</result>
+			<result name="success">/baseline/viewBaseLineTemplate.jsp</result>
+		</action>
+		<!-- 基线类 -->
+		<action name="viewAllBaseline" class="BaseLineAction" method="getAllBaseline">
+
+		</action>
+		<action name="saveBaseLine" class="BaseLineAction" method="saveBaseLine">
+			<result name="failed">/error.jsp</result>
+			<result name="success">/baseline/viewBaseLine.jsp</result>
+		</action>
+		<action name="deleteBaseLine" class="BaseLineAction" method="deleteBaseLine">
+			<result name="failed">/error.jsp</result>
+			<result name="success">/baseline/viewBaseLine.jsp</result>
+		</action>
+		<action name="toModifyBaseLine" class="BaseLineAction" method="toModifyBaseLine">
+			<result name="failed">/error.jsp</result>
+			<result name="success">/baseline/modifyBaseLine.jsp</result>
+		</action>
+		<action name="modifyBaseLine" class="BaseLineAction" method="modifyBaseLine">
+			<result name="failed">/error.jsp</result>
+			<result name="success">/baseline/viewBaseLine.jsp</result>
+		</action>
+		<action name="baseLineRuleMapping" class="BaseLineAction" method="baseLineRuleMapping">
+			<result name="failed">/error.jsp</result>
+			<result name="success">/baseline/viewBaseLine.jsp</result>
+		</action>
+		<action name="getBaseLineRuleByDev" class="BaseLineAction" method="getBaseLineRuleByDev">
+		</action>
+		<action name="toAddTemplateRule" class="BaseLineAction" method="toAddTemplateRule">
+			<result name="success">/rule/addBaseLineRule.jsp</result>
+		</action>
+		<action name="queryBaseLineMatchScore" class="BaseLineAction" method="queryBaseLineMatchScore">			
+		</action>
+		<action name="queryResBaseLineMatchScore" class="BaseLineAction" method="queryResBaseLineMatchScore">			
+		</action>
+		<action name="queryResBaseLineScoreDatil" class="BaseLineAction" method="queryResBaseLineScoreDatil">			
+		</action>
+		<action name="toQueryMatchDatil" class="BaseLineAction" method="toQueryMatchDatil">	
+			<result name="failed">/error.jsp</result>
+			<result name="success">/baseline/viewMatchScoreDetail.jsp</result>
+		</action>
+		<!-- 规则类 -->
+		<action name="toChangeSyslogRule" class="SyslogRuleAction" method="toChangeSyslogRule">
+			<result name="failed">/error.jsp</result>
+			<result name="success">/rule/changeSyslogRule.jsp</result>
+		</action>
+		<action name="syslogRule" class="SyslogRuleAction" method="syslogRule">
+			<result name="failed">/error.jsp</result>
+			<result name="success">/rule/viewAllDevType.jsp</result>
+		</action>
+		<action name="deleteSyslogRule" class="SyslogRuleAction" method="deleteRule">
+			<result name="failed">/error.jsp</result>
+			<result name="success">/rule/viewAllDevType.jsp</result>
+		</action>
+		<action name="toChangeConfigRule" class="ConfigPolicyRuleAction" method="toChangeConfigRule">
+			<result name="failed">/error.jsp</result>
+			<result name="success">/rule/changeConfigRule.jsp</result>
+		</action>
+		<action name="configRule" class="ConfigPolicyRuleAction" method="configRule">
+			<result name="failed">/error.jsp</result>
+			<result name="success">/rule/viewAllDevType.jsp</result>
+		</action>
+		<action name="deleteConfigRule" class="ConfigPolicyRuleAction" method="deleteConfigRule">
+			<result name="failed">/error.jsp</result>
+			<result name="success">/rule/viewAllDevType.jsp</result>
+		</action>
+		<action name="querySyslogHitByRes" class="SyslogRuleAction" method="querySyslogHitByRes">		
+		</action>
+		<!-- 用户类 -->
+		<action name="viewUserInfo" class="UserAction" method="viewUserInfo">
+		</action>
+		<action name="viewUserInRoleMapping" class="UserAction" method="viewUserInRoleMapping">
+		</action>
+		<action name="saveUser" class="UserAction" method="saveUser">
+			<result name="failed">/error.jsp</result>
+			<result name="success">/users/viewUser.jsp</result>
+		</action>
+		<action name="toModifyUser" class="UserAction" method="toModifyUser">
+			<result name="failed">/error.jsp</result>
+			<result name="success">/users/modifyUser.jsp</result>
+		</action>
+		<action name="modifyUser" class="UserAction" method="modifyUser">
+			<result name="failed">/error.jsp</result>
+			<result name="success">/users/viewUser.jsp</result>
+		</action>
+		<action name="deleteUser" class="UserAction" method="deleteUser">
+			<result name="failed">/error.jsp</result>
+			<result name="success">/users/viewUser.jsp</result>
+		</action>
+		<action name="userRoleMapping" class="UserAction" method="userRoleMapping">
+			<result name="failed">/error.jsp</result>
+			<result name="success">/users/viewUser.jsp</result>
+		</action>
+		<action name="getRoleByUser" class="UserAction" method="getRoleByUser">
+			
+		</action>
+		<!-- 组织部门 -->
+		<action name="viewAllOrg" class="OrgAction" method="viewAllOrg">
+		</action>
+		<action name="saveOrg" class="OrgAction" method="saveOrg">
+			<result name="failed">/error.jsp</result>
+			<result name="success">/users/viewOrg.jsp</result>
+		</action>
+		<action name="toModifyOrg" class="OrgAction" method="toModifyOrg">
+			<result name="failed">/error.jsp</result>
+			<result name="success">/users/modifyOrg.jsp</result>
+		</action>
+		<action name="modifyOrg" class="OrgAction" method="modifyOrg">
+			<result name="failed">/error.jsp</result>
+			<result name="success">/users/viewOrg.jsp</result>
+		</action>
+		<action name="deleteOrg" class="OrgAction" method="deleteOrg">
+			<result name="failed">/error.jsp</result>
+			<result name="success">/users/viewOrg.jsp</result>
+		</action>
+		<action name="allOrgRree" class="OrgAction" method="allOrgRree">
+		</action>
+		<action name="getOrgTreeByid" class="OrgAction" method="getOrgTreeByid">
+		</action>
+		<!-- 角色类 -->
+		<action name="viewRole" class="SysRoleAction" method="viewRole">
+		</action>
+		<action name="saveRole" class="SysRoleAction" method="saveRole">
+			<result name="failed">/error.jsp</result>
+			<result name="success">/users/viewRole.jsp</result>
+		</action>
+		<action name="toModifyRole" class="SysRoleAction" method="toModifyRole">
+			<result name="failed">/error.jsp</result>
+			<result name="success">/users/modifyRole.jsp</result>
+		</action>
+		<action name="modifyRole" class="SysRoleAction" method="modifyRole">
+			<result name="failed">/error.jsp</result>
+			<result name="success">/users/viewRole.jsp</result>
+		</action>
+		<action name="deleteRole" class="SysRoleAction" method="deleteRole">
+			<result name="failed">/error.jsp</result>
+			<result name="success">/users/viewRole.jsp</result>
+		</action>
+		<action name="roleAppMapping" class="SysRoleAction" method="roleAppMapping">
+			<result name="failed">/error.jsp</result>
+			<result name="success">/users/viewRole.jsp</result>
+		</action>
+		<action name="getAppTree" class="SysRoleAction" method="getAppTree">
+
+		</action>
+		<action name="getAppByRole" class="SysRoleAction" method="getAppByRole">
+
+		</action>
+		<!-- 事件类 -->
+		<action name="saveEventType" class="EventAction" method="saveEventType">
+			<result name="failed">/error.jsp</result>
+			<result name="success">/event/viewEventType.jsp</result>
+		</action>
+		<action name="toModifyEventType" class="EventAction" method="toModifyEventType">
+			<result name="failed">/error.jsp</result>
+			<result name="success">/event/modifyEventType.jsp</result>
+		</action>
+		<action name="modifyEventType" class="EventAction" method="modifyEventType">
+			<result name="failed">/error.jsp</result>
+			<result name="success">/event/viewEventType.jsp</result>
+		</action>
+		<action name="ViewEventType" class="EventAction" method="ViewEventType">
+		</action>
+		<action name="deleteEventType" class="EventAction" method="deleteEventType">
+			<result name="failed">/error.jsp</result>
+			<result name="success">/event/viewEventType.jsp</result>
+		</action>
+		<action name="saveEventMsg" class="EventAction" method="saveEventMsg">
+			<result name="failed">/error.jsp</result>
+			<result name="success">/event/viewEventType.jsp</result>
+		</action>
+		<action name="toSaveEventMsg" class="EventAction" method="toSaveEventMsg">
+			<result name="failed">/error.jsp</result>
+			<result name="success">/event/addEventMsg.jsp</result>
+		</action>
+		<action name="toModifyEventMsg" class="EventAction" method="toModifyEventMsg">
+			<result name="failed">/error.jsp</result>
+			<result name="success">/event/viewEventMsg.jsp</result>
+		</action>
+		<action name="modifyEventMsg" class="EventAction" method="modifyEventMsg">
+			<result name="failed">/error.jsp</result>
+			<result name="success">/event/viewEventType.jsp</result>
+		</action>
+		<action name="getAllEventType" class="EventAction" method="getAllEventType">
+		</action>
+		<action name="viewEventRule" class="EventAction" method="viewEventRule">
+		</action>
+		<action name="toAddEventRule" class="EventAction" method="toAddEventRule">
+			<result name="failed">/error.jsp</result>
+			<result name="success">/event/addEventRule.jsp</result>
+		</action>
+		<action name="toModifyEventRule" class="EventAction" method="toModifyEventRule">
+			<result name="failed">/error.jsp</result>
+			<result name="success">/event/modifyEventRule.jsp</result>
+		</action>
+		<action name="saveEventRule" class="EventAction" method="saveEventRule">
+			<result name="failed">/error.jsp</result>
+			<result name="success">/event/eventRule.jsp</result>
+		</action>
+		<action name="modifyEventRule" class="EventAction" method="modifyEventRule">
+			<result name="failed">/error.jsp</result>
+			<result name="success">/event/eventRule.jsp</result>
+		</action>
+		<action name="deleteEventRule" class="EventAction" method="deleteEventRule">
+			<result name="failed">/error.jsp</result>
+			<result name="success">/event/eventRule.jsp</result>
+		</action>
+		<action name="getEventByEventId" class="EventAction" method="getEventByEventId">	
+			
+		</action>
+		<action name="toDealEvent" class="EventAction" method="toDealEvent">	
+			<result name="success">/event/dealEvent.jsp</result>
+		</action>
+		<action name="dealEvent" class="EventAction" method="dealEvent">	
+			<result name="success">/event/dealEvent.jsp</result>
+		</action>
+		<action name="getEventbyTime" class="EventAction" method="getEventbyTime">	
+		</action>
+		<action name="getEventbyResId" class="EventAction" method="getEventbyResId">	
+		</action>
+		<action name="toViewEvent" class="EventAction" method="toViewEvent">	
+			<result name="success">/event/findEventOfRes.jsp</result>
+		</action>
+		<action name="toAddAlarmReceive" class="EventAction" method="toAddAlarmReceive">	
+			<result name="success">/event/addNotifyUser.jsp</result>
+			<result name="failed">/error.jsp</result>
+		</action>
+		<action name="toModifyAlarmReceive" class="EventAction" method="toModifyAlarmReceive">	
+			<result name="success">/event/modifyNotifyUser.jsp</result>
+			<result name="failed">/error.jsp</result>
+		</action>
+		<action name="saveOrUpdateNotifyUser" class="EventAction" method="saveOrUpdateNotifyUser">	
+			<result name="success">/event/eventRule.jsp</result>
+			<result name="failed">/error.jsp</result>
+		</action>
+		<action name="toAddFWAlarmReceive" class="EventAction" method="toAddFWAlarmReceive">	
+			<result name="success">/event/addNotifyUserNoFw.jsp</result>
+			<result name="failed">/error.jsp</result>
+		</action>
+		<action name="toAddMcaAlarmReceive" class="EventAction" method="toAddMcaAlarmReceive">	
+			<result name="success">/event/addNotifyUserNoMca.jsp</result>
+			<result name="failed">/error.jsp</result>
+		</action>
+		<action name="queryAlarmReceive" class="EventAction" method="queryAlarmReceive">	
+		</action>
+		<!-- 用户登录 -->
+
+		<action name="queryFwFileByRes" class="RawFwFileAction" method="queryFwFileByRes">	
+		</action>
+		
+		<action name="login" class="LoginAction" method="login">
+
+			<result name="loginError">/login.jsp</result>
+			<result name="success" type="redirect">/index.jsp</result>
+			<result name="toResetPasswd">/users/resetPasswd.jsp</result>
+		</action>
+		<action name="logout" class="LoginAction" method="logout">	
+			<result name="success">/login.jsp</result>
+		</action>
+		<action name="checkOldPasswd" class="LoginAction" method="checkOldPasswd">
+		</action>
+		<action name="checkNewPasswd" class="LoginAction" method="checkNewPasswd">
+		</action>
+		<action name="modifySelf" class="UserAction" method="modifySelf">	
+			<result name="success">/first.jsp</result>
+			<result name="failed">/error.jsp</result>
+		</action>
+		<action name="resetPasswd" class="UserAction" method="resetPasswd">	
+			<result name="success">/login.jsp</result>
+			<result name="resetError">/users/resetPasswd.jsp</result>
+		</action>
+		<action name="checkPasswd" class="UserAction" method="checkPasswd">	
+		</action>
+		<!-- 密码策略 -->
+		<action name="toModifyPasswdRule" class="SysPasswdRuleAction" method="toModifyPasswdRule">	
+			<result name="success">/users/modifyPasswdRule.jsp</result>
+			<result name="failed">/error.jsp</result>
+		</action>
+		<action name="modifyPasswdRule" class="SysPasswdRuleAction" method="modifyPasswdRule">	
+			<result type="redirectAction" name="success">toModifyPasswdRule</result>
+			<result name="failed">/error.jsp</result>
+		</action>
+		<!-- 用户访问策略 -->
+		<action name="toModifyAccessRule" class="SysAccessRuleAction" method="toModifyAccessRule">	
+			<result name="success">/users/modifyAccessRule.jsp</result>
+			<result name="failed">/error.jsp</result>
+		</action>
+		<action name="modifyAccessRule" class="SysAccessRuleAction" method="modifyAccessRule">	
+			<result type="redirectAction" name="success">toModifyAccessRule</result>
+			<result name="failed">/error.jsp</result>
+		</action>
+		<!-- 系统日志 -->
+		<action name="viewLog" class="LogAction" method="viewLog">	
+		</action>
+
+		<!--调度任务 -->
+		<action name="*TaskScheduleAction" class="TaskScheduleAction" method="{1}">
+			<result name="close" type="dispatcher">/task/closed.jsp</result>
+			<result name="failed">/error.jsp</result>
+			<result name="success">/task/taskView.jsp</result>
+			<result name="toView">/task/taskView.jsp</result>
+		</action>
+		<!-- 任务执行情况 -->
+		<action name="viewTaskExecute" class="MsuSchedUuleAction" method="viewTaskExecute">	
+		</action>
+		<!-- MD5完整性校验 -->
+		<action name="md5Receive" class="Md5RecAction" method="md5Receive">	
+		</action>
+	</package>
+	<constant name="struts.action.excludePattern" value="/dwr/.*,/dwr/test/.*" />
+</struts>    

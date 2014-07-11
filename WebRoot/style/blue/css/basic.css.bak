@@ -1,0 +1,498 @@
+/*CSS Document
+*2009-06-03
+*Copyright (c) ultrapower UE-Team 
+*/
+
+/************************************wrong start***************************************/
+.form_main{
+	margin:0 auto;
+	padding-left:100px;
+	padding-top:20px;	
+	font:12px/25px "宋体" ;
+	text-align:left;
+	overflow:hidden;
+}
+.form_main td{
+    line-height:28px;
+	padding:0;
+	margin:0;
+	border-right:none;border-left:none;
+	border-bottom:1px #eeecf2 solid
+}
+.tips{
+	background:#f8f9ed url(../images/tips.png) no-repeat;
+	font-family:"宋体";
+	font-size: 12px;
+	font-weight: bold;
+	color: #333333;
+	text-indent: 25px;
+	line-height:26px;
+}
+.label{
+   text-align:right;
+   width:30%;
+}
+.label span,.tips span{
+    color:#ff0000;
+}
+.desc{
+   width:30%;    
+}
+.error{
+	background:#fffae3;
+	border:1px solid #ff7200;
+	width:222px;
+	height:17px;
+	text-align:left;
+	display:block;
+	padding:0 5px;
+}
+.error span{
+    background:url(../images/err.png) no-repeat;
+	padding-left:23px;
+	line-height:18px;
+	color:#862512;
+	display:block
+}
+/*popup error*/
+.closewindow{
+    background:url(../images/close.png) no-repeat;
+	width:15px;
+	height:15px;
+	padding-right:5px;
+	float:right;
+	margin-top:-20px;
+	cursor:pointer;
+}
+.closewindow_body{
+    overflow:auto;
+	width:100%;
+	text-align:center; 
+	height:100%;
+	background:url(../images/closewindow_body_bg.png) repeat-x bottom;
+	}
+.error_main{
+	margin:0;
+	padding-left:100px;
+	padding-top:20px;
+	background:url(../images/tip_wrong.gif) no-repeat 45px 20px;
+	font:12px/25px "宋体" ;
+	text-align:left;
+	overflow:hidden;
+}
+/*popup error*/	
+.button_bar{
+    height:28px;
+	line-height:28px;
+	overflow:hidden;
+	margin-top:15px;
+	padding-top:5px;
+	border-top: 1px dashed #a1a1a1;
+	text-align:center;
+}
+/**************************************wrong end***************************************/
+
+
+/***************************welcome start****************************************/
+
+.welcome_content{
+	background:#BDD5FC url(../images/welcome_bg.png) no-repeat center top;
+}
+/*****************************welcome End***************************************/
+
+
+/*********************************waitting start************************************/
+.waitting_content{
+	background: #BDD5FC url(../images/waitting_bg.png) center;
+}
+.wait_word{
+	height:190px;
+	width:271px;
+	background: url(../images/waitting.gif) no-repeat;
+	padding-left:100px;
+	margin:130px auto;
+	line-height:75px;
+	font-size:14px;
+	color:#01075b;
+}
+.waitting_popup{
+	margin:0;
+	padding-left:100px;
+	padding-top:40px;
+	background:url(../images/waitting_2.gif) no-repeat 34px 40px;
+	font:12px/34px "宋体" ;
+	text-align:left;
+	overflow:hidden;
+	}
+/***********************************waitting end***************************************/
+
+
+/*************************************add&del&edit end*********************************/
+.confirm_main{
+	margin:0;
+	padding-left:20px;
+	background:url(../images/alarm.png) no-repeat 45px 20px;
+	font:12px/85px "宋体" ;
+}
+/***********************************add&del&edit end************************************/
+
+
+
+/***********************************register start**************************************/
+.guide{
+    width:100%;
+	background:url(../images/guide_bar.png) repeat-x top;
+	padding:0px;
+	height:28px;
+	text-align:center;
+	padding-left:0px!important;
+	*padding-left:25%!important;
+	padding-left:25%;
+	}
+.guide span{
+    display:block;
+	height:28px;
+	width:100px;
+	line-height:40px;
+	float:left;
+}
+.steparrow{
+    background:url(../images/guide_arrow.png) no-repeat center 10px;
+	margin:5px 5px;
+}
+.current{
+   background:url(../images/guide_current.png) no-repeat center 3px;
+   padding:0;
+   color:#184d97;
+   font-weight:bold;
+}
+/**********************************register end***************************************/
+
+
+/********************************** popupTip start*************************************/
+.popupTip{
+	width: 330px;
+	height: 230px;
+	border-bottom:#90b4e5 1px solid;
+	border-left: #90b4e5 1px solid;
+	border-right: #90b4e5 1px solid;
+	font-size:12px;
+	font-weight:bold;
+	font-family:Arial, Helvetica, sans-serif,"宋体";
+	Z-INDEX: 10; 
+	VISIBILITY: hidden; 
+	POSITION: absolute;
+}
+.popup_title{
+	background:url(../images/content_title_bg.png) repeat-x;
+	height:26px;
+	width:100%;	
+	line-height:26px;
+}
+.popup_title .text{
+	padding-left:10px;
+	color: #184d97;
+}
+.Popup_content{
+	background:#FFFFFF;
+	width:100%;
+	height:174px;
+}
+.Popup_content_tabel{
+	font-size: 12px;
+	color: #333333;
+	width:100%;
+	position:relative;
+	background:#FFFFFF;
+	border:none;
+}
+.Popup_content_tabel td{
+    background:#FFFFFF;
+	border:none;
+}
+/*********************************** popupTip end**************************************/
+
+/*************************************configure****************************************/
+.left_content{
+	width:100%;
+	overflow:auto;
+	height:350px;
+	}
+.left_content ul{
+	list-style-type:none;
+	margin:10px 0px 0px -40px !important;
+	*margin:10px 0px 0px 0px !important;
+}
+.left_content ul li{
+	padding:5px 0 7px 10px;
+	cursor:pointer;
+}
+.left_content ul li.active{
+	background:url(../images/left_content_activebg.png) repeat-x center center;
+}
+.left_content ul li img{
+	margin:1px 6px -3px 0px;
+}
+.content_tabcontent{
+	margin:10px 0 0 15px;
+	}
+.content_tabcontent .textinfo{
+	width:120px;
+	padding:10px;
+	margin:5px;
+	text-align:right;
+	width:130px;
+}
+/*********************************configure*************************************/
+
+/*********************************about css*************************************/
+.about_title{
+	background: url(../images/gwlogo.png) no-repeat left top;
+	font-size: 14px;
+	font-weight: bold;
+	color: #003366;
+	height:51px;
+	padding-left: 79px;
+	border-bottom: 1px solid #6F9DD9;
+	line-height:51px;
+   }
+.about_main{
+	margin: 10px;
+   }
+.about_main_font p{
+	line-height:20px;
+	margin:0;	
+   }
+.about_main_font{
+	color: #333;
+	padding-left:25px;
+	text-indent: 25px;	
+   }
+.closewindow{
+    background:url(../images/close.png) no-repeat;
+	width:15px;
+	height:15px;
+	padding-right:5px;
+	float:right;
+	margin-top:-20px;
+	cursor:pointer;
+}
+/**********************************about css end**************************************/
+
+/************************************changeSkin****************************************/
+select{
+	font: 12px Geneva, Arial, Helvetica, sans-serif, "宋体";
+	color: #333333;   
+	}
+.container{
+   background:#fff;
+   width:950px;
+   height:560px;
+   position:absolute;
+   top:50%;
+   left:50%;
+   margin:-280px 0 0 -475px;
+}
+.info{
+   color:#333333;
+   font-family:'宋体';
+   font-size:12px;
+   padding:10px;
+   }
+
+.choose_motif{
+  border-top:1px solid #D9D9D9;
+  border-bottom:1px solid #D9D9D9;
+  height:470px;
+  width:100%;
+  padding-top:10px;
+}
+.motif_pic{
+   width:750px;
+   float:left;
+   height:484px;
+}
+.motif_name{
+   width:174px;
+   height:415px;
+   float:right;
+   background:#EFEFEF;  
+   padding:10px 10px 0 10px;
+} 
+.motif_pic_title{
+   color:#333;
+   font-weight:bold;
+   font-family:'宋体';
+   font-size:12px;
+   width:750px;
+   text-align:center;
+   height:15px;  
+}  
+.skinpic{
+	padding-left:8px;
+	height:427px;
+	width:733px;
+	background:url(../../../skin/Blue.png);
+	margin-bottom:5px;
+}  
+.button_right{
+   float:right;
+   padding-right:40px;
+   padding-bottom:2px;
+ }
+ 
+/**********************************changeSkin****************************************/
+
+/*****************************************help css***********************************/
+.ver_container{
+   margin:5px;
+   border:1px solid #99BBE8;
+   border-top:none;
+   color:#333333;
+   font-size:12px;
+   background:#fff;
+   margin-bottom:10px;
+   }
+.ver_title{
+   width:100%;
+   background:url(../images/content_title_bg.png);
+   height:26px;
+   }
+.ver_title span{
+   line-height:25px;
+   color:#333333;
+   font-weight:bold;
+   font-size:12px;
+   padding-left:30px;
+   }
+.ver_font_left_bluebg{
+   text-align:center;
+   color:#333333;
+   line-height:40px;
+   font-weight:bold;
+   background: #F0F6FF url(../images/versions_line.png) repeat-y right;
+   }
+.ver_font_right{
+   padding-left:35px;
+   color:#333333;
+   line-height:22px;
+   }
+.ver_rowline{
+   width:100%px;
+   height:1px;
+   background:url(../images/versions_rowline.png) repeat-x;
+   
+   }
+
+/*********************************help css end**************************************/
+
+/***********************************logout CSS start********************************/
+.logout_main{
+   margin:0px; 
+   font:12px/70px "宋体", "幼圆";
+   overflow:hidden;
+   padding:0px; 
+   text-align:center; 
+}
+/**********************************logout CSS start***********************************/
+
+/************************************ search css *************************************/
+.search_sitebg {	
+	height:100px;
+	margin:0;
+	padding:0;
+	clear:both;
+}
+.serach_main{
+	margin:0;
+	padding:0;
+}
+.search_main td{
+    border:none;
+	margin:0px;
+	padding:0px;
+	line-height:28px;
+}
+.search_main td.label{
+    text-align:right;
+}
+.search_main td.label span{
+    color:#f00;
+}
+.search_main td.input{
+    text-align:left;
+}
+.searchTitle{
+	width:100%;
+	background:#f8f9ed;
+	font-weight: bold;
+	color: #333333;
+	text-indent: 25px;
+	border-bottom:1px dotted #757575;
+	text-align:left;
+	line-height:26px;
+}
+.search_close {
+   height:20px;
+   width:20px;
+   cursor:pointer;
+   margin-top:-20px;
+   float:right;
+   background:url(../images/close.png) no-repeat left top;
+}
+/********************************* search css ********************************/
+
+/******************************** portal Css start****************************/
+.portal_div {
+	background:url(../images/div_bg.png) repeat-x;
+	width:287px;
+	height:113px;
+	border:1px #E4E4E4 solid;
+	padding:8px 4px 4px 4px;
+	margin-left:33px;
+	margin-bottom:20px !important;
+	*margin-bottom:0px !important;
+	_margin-bottom:0px;
+}
+.portal_div_img {
+	width:100px;
+	float:left;
+	margin-left:6px;
+	_margin-left:3px;
+	padding-top:4px !important;
+	*padding-top:4px !important;
+	_padding-top:3px;
+}
+.portal_div_right {
+	float:right;
+	width:175px;
+}
+.portal_div_text_title {
+	font-size:14px;
+	font-weight:bold;
+	color:#000000;
+	text-align:left;
+	padding-left:6px;
+	line-height:25px;
+	border-bottom:1px #E4E4E4 solid;
+}
+.portal_div_text {
+	padding:10px;
+	color:#666666;
+}
+.portal_div span{color:#ff0000;}
+.portal_button_div {
+	padding-top:10px!important;
+	padding-top:10px;
+	padding-left:98px;
+	padding-bottom:0px;
+}
+.portal_button {
+	background:url(../images/button.png);
+	width:68px;height:20px;
+	border:0px;
+	line-height:20px;
+	color:#7A7A7A;
+	cursor:pointer;
+}
+/************************************** portal Css end*****************************/

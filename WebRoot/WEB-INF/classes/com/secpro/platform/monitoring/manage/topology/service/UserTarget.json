@@ -1,0 +1,21 @@
+node:{
+	"t":"resource type",
+	"l":"label name",
+	"id":"node ID",
+	"i":"node image"
+}
+nodeGroup{
+	"t":"resource type", 
+	"g":"label name",
+	ids":" all resource id "
+}
+groupRelationEdge:{ 
+	"s":"start resource id",
+    "t":"relation type id",
+    "g":"group name"
+}
+relationEdge:{ 
+	"s":"start resource id",
+    "t":"relation type id",
+    "e":"end resource id",
+}
